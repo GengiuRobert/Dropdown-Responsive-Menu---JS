@@ -2,16 +2,25 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: bisque;
+}
+
+#mobile {
+    display: none;
+}
+
+.mobile-view {
+    background-color: #333;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    background-color: #333;
     padding: 10px;
 }
 
-.navbar button {
+.navbar button,
+#mobile {
     flex: 1;
     padding: 10px 20px;
     background-color: gray;
@@ -114,4 +123,48 @@ body {
 
 .green-shades a:hover {
     background-color: #f1f1f1;
+}
+
+@media screen and (max-width:768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+    }
+
+    #mobile {
+        display: block;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content,
+    .color-dropdown,
+    .green-shades {
+        position: static;
+        background-color: #f9f9f9;
+    }
+
+    .navbar button,
+    .dropdown button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content a,
+    .color-dropdown a,
+    .green-shades a {
+        padding-left: 20px;
+    }
+
+    .color-dropdown,
+    .green-shades {
+        padding-left: 20px;
+    }
 }
